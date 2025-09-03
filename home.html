@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Top Chefs👌🏻</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* الـ main hero بخلفية فيديو */
+  .main-hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 80vh;
+    overflow: hidden;
+  }
+
+  .main-hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .main-hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .main-hero img {
+    width: 450px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .main-hero h1 {
+    font-size: 48px;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  }
+
+  nav a, nav button {
+    color: white; 
+    text-decoration:none; 
+    margin-left:10px; 
+    background:none; 
+    border:none; 
+    font-size:14px; 
+    cursor:pointer;
+  }
+
+  button.logout-btn {
+    background:#0077b6; 
+    border:none; 
+    padding:5px 10px; 
+    border-radius:4px; 
+    cursor:pointer; 
+    color:white;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Top Chefs👌🏻</h1>
+</header>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="feedback.html">Feedback</a>
+  <span id="loginBtn"></span>
+</nav>
+
+<div class="main-hero">
+  <video autoplay muted loop>
+    <source src="Background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="main-hero-content">
+    <img src="https://scontent-hbe1-1.xx.fbcdn.net/v/t39.30808-6/542710155_2279740992472574_4107203071881505785_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CwPsqC-IDu8Q7kNvwFM1mLE&_nc_oc=AdlLfKWS-gPTL8r6I9tmzSFPhvCzDmoTdGZuE5znqJl8nof5qIXBpv0GeJmjaTg5jAs&_nc_zt=23&_nc_ht=scontent-hbe1-1.xx&_nc_gid=GhhltEeuMi2iACA4rLiB_Q&oh=00_AfbkVuTnaY_7bbxOvUzGwzB0yTBNHLZud-mvHLDK3puOJQ&oe=68BE4C06" alt="Logo">
+    <h1>Top Chefs👌🏻</h1>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Top Chefs👌🏻
+</footer>
+
+<script src="login.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  updateLoginBtn(); // يظهر login/logout وhello user
+});
+</script>
+
+</body>
+</html>

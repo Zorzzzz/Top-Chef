@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Top Chefs👌🏻</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header><h1>Top Chefs👌🏻 - Login</h1></header>
+
+<nav>
+  <a href="home.html" class="nav-link">Home</a>
+  <span id="loginBtn"></span>
+</nav>
+
+<h2 class="section-title">Login</h2>
+
+<div class="container" style="flex-direction:column; max-width:400px; margin:auto;">
+  <div class="input-field">
+    <label>Username</label>
+    <input type="text" id="username">
+  </div>
+  <div class="input-field">
+    <label>Password</label>
+    <input type="password" id="password">
+  </div>
+  <div class="input-field">
+    <label>Login As</label>
+    <select id="loginType">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+  </div>
+  <button class="submit-btn" onclick="login()">Login</button>
+
+  <p style="text-align:center; margin-top:10px;">
+    Don't have an account? <a href="register.html">Register here</a>
+  </p>
+</div>
+
+<footer>&copy; 2025 Top Chefs👌🏻</footer>
+
+<script src="login.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  updateLoginBtn(); // زر login/logout يظهر بعد تحميل الصفحة
+});
+
+const adminUser = {username:"admin", password:"admin123"};
+
+function login(){
+  const user=document.getElementById("username").value.trim();
+  const pass=document.getElementById("password").value;
+  const type=document.getElementById("loginType").value;
+
+  if(!user || !pass){ alert("Fill all fields!"); return; }
+
+  if(type==="admin"){
+    if(user===adminUser.username && pass===adminUser.password){
+      localStorage.setItem("currentUser", user);
+      localStorage.setItem("isAdmin","true");
+      alert("Admin Login Successful!");
+      window.location.href="admin.html";
+    } else alert("Wrong Admin credentials!");
+  } else {
+    let users = JSON.parse(localStorage.getItem("users")||"[]");
+    const found = users.find(u=>u.username===user && u.password===pass);
+    if(found){
+      localStorage.setItem("currentUser", user);
+      localStorage.setItem("isAdmin","false");
+      alert("User Login Successful!");
+      window.location.href="home.html";
+    } else alert("Wrong credentials or register first!");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback - موقع الأكلات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <h1>Top Chefs👌🏻</h1>
+    <p>Delicious Recipes & Cooking Ideas</p>
+  </header>
+
+  <!-- النافبار -->
+  <nav>
+  <a href="home.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="feedback.html">Feedback</a>
+  <span id="loginBtn"></span>
+</nav>
+
+  <!-- العنوان -->
+  <h2 class="section-title">📩 ابعتلنا Feedback</h2>
+
+  <!-- الكونتينر -->
+  <div class="container">
+    <div class="feedback-box">
+      <form action="https://formspree.io/f/xvgbvgov" method="POST">
+        <div class="input-field">
+          <label>الاسم:</label>
+          <input type="text" name="name" required>
+        </div>
+
+        <div class="input-field">
+          <label>الإيميل:</label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="input-field">
+          <label>الرسالة:</label>
+          <textarea name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">إرسال</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- الفوتر -->
+  <footer>
+    <p>© 2025 Top Chefs👌🏻 - All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
